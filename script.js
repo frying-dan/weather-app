@@ -1,5 +1,6 @@
 // variables and elements
-const apiKey = "d5825739a054d13e11200302cbb386f1";
+import { API_KEY } from './config.js';
+const apiKey = API_KEY;
 const flagsApi = `https://www.countryflagicons.com/FLAT/64/COUNTRYCODE.png`;
 
 const cityInput = document.querySelector("#city-input");
@@ -27,6 +28,7 @@ const getWeatherData = async (city) => {
     return data;
 };
 
+
 const showWeatherData = async (city) => {
   
     const data = await getWeatherData(city);
@@ -41,7 +43,6 @@ const showWeatherData = async (city) => {
     countryElement.setAttribute("src", flagsApi.replace("COUNTRYCODE", data.sys.country));
     humidityElement.innerText = `${data.main.humidity}%`;
     windElement.innerText = `${data.wind.speed}km/h`;
-
     weatherContainer.classList.remove("hide");
 };
 
@@ -60,6 +61,3 @@ searchBtn.addEventListener("click", async (e) => {
       showWeatherData(city);
     }
   });
-
-
-
