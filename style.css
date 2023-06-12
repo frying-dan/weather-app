@@ -115,9 +115,3 @@ body {
     margin: 0.6rem;
     padding: 0.6rem;
 }
-
-.skeleton {
-    animation: skeleton-loading 1s linear infinite alternate;
-}
-
-@keyframes
